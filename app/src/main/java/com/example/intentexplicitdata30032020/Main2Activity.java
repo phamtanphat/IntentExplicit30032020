@@ -8,6 +8,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.ArrayList;
+
 public class Main2Activity extends AppCompatActivity {
 
     Button mBtnReplyString;
@@ -17,10 +19,18 @@ public class Main2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
         mBtnReplyString = findViewById(R.id.buttonIntentString);
-        final Intent intent = getIntent();
+        Intent intent = getIntent();
         if (intent != null){
-            String chuoi1 = intent.getStringExtra("chuoi");
-            String chuoi2 = intent.getStringExtra("chuoi2");
+            //String
+//            String chuoi1 = intent.getStringExtra("chuoi");
+//            String chuoi2 = intent.getStringExtra("chuoi2");
+            //Object
+            Sinhvien sinhvien = intent.getParcelableExtra("object");
+            Log.d("BBB",sinhvien.name);
+
+//
+//            ArrayList<Sinhvien> sinhvien = intent.getParcelableArrayListExtra("object");
+//            Log.d("BBB",sinhvien.size() + "");
         }
         mBtnReplyString.setOnClickListener(new View.OnClickListener() {
             @Override
